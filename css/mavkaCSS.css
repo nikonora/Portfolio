@@ -25,7 +25,7 @@ h1 {
     margin: 1.5vw 0 5vw 0
 }
 
-#course>a:visited {
+#course>a:visited, #link>a:visited {
     color: rgb(82, 94, 118);
 }
 
@@ -47,6 +47,9 @@ ul li {
     padding: 1.3vw;
 }
 
+ul li:hover {
+    background-color: rgb(207, 208, 211);
+}
 ul li a {
     text-decoration: none;
     color: rgb(24, 45, 36);
@@ -61,7 +64,17 @@ ul li a {
     shape-outside: url(/img/portrait.png);
     shape-margin: 1.5vw; 
     margin-right: 6vw; 
+
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.8s ease 0.5s;
 }
+
+.about-hero._active img { 
+    transform: scale(1);
+    opacity: 1;
+} 
+
 
 .section>p {
     font-size: 1.8vw;
@@ -69,7 +82,7 @@ ul li a {
     text-indent: 3vw;
 }
 
-.about {
+.history {
     margin-bottom: 10vw;
 }
 
@@ -187,20 +200,31 @@ h2 {
     text-align: center
 }
 
-#emotions-r1>img, #emotions-r2>img {
+.emotions-r1>img, .emotions-r2>img {
     display: inline-block;
     height: 20vw;
     margin: 0.5vw 5vw;
 }
 
-.emotions {
+.emotions-r1 img {
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.emotions._active img {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.emotions._active {
     margin-top: 1.5vw;
     background: url(/img/insert.png);
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center, 10%;
     background-size: 80vw 100vw; 
-    text-align: center
+    text-align: center;
 }
 
 h3 {
