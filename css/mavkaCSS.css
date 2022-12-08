@@ -22,10 +22,10 @@ h1 {
     font-weight: 700;
     font-size: 3vw;
     color: rgb(24, 45, 36);
-    margin: 1.5vw 0 5vw 0
+    margin: 1.5vw 0 5vw 0;
 }
 
-#course>a:visited, #link>a:visited {
+#course a:visited, #link a:visited {
     color: rgb(82, 94, 118);
 }
 
@@ -50,6 +50,7 @@ ul li {
 ul li:hover {
     background-color: rgb(207, 208, 211);
 }
+
 ul li a {
     text-decoration: none;
     color: rgb(24, 45, 36);
@@ -58,7 +59,7 @@ ul li a {
     font-weight: 600;
 }
 
-.portrait>img {
+.portrait img {
     height: 40vw;
     float: right;
     shape-outside: url(/img/portrait.png);
@@ -67,16 +68,16 @@ ul li a {
 
     transform: scale(0);
     opacity: 0;
-    transition: all 0.8s ease 0.5s;
+    transition: all 0.8s ease 0s;
 }
 
 .about-hero._active img { 
     transform: scale(1);
     opacity: 1;
+    transition: all 0.8s ease 0.6s;
 } 
 
-
-.section>p {
+.section p {
     font-size: 1.8vw;
     margin: 2vw 13vw 0 13vw;
     text-indent: 3vw;
@@ -86,7 +87,7 @@ ul li a {
     margin-bottom: 10vw;
 }
 
-.reference>img { 
+.reference img { 
     padding: 0.2vw;
     background-color: white;
     position: relative;
@@ -96,68 +97,97 @@ ul li a {
     margin-left: 10vw; 
 }
 
-#ref1 {
+.ref1 {
     top: -3vw;
     left: 4vw;
     z-index: 2;
-    height: 17vw      
+    height: 17vw;      
 }
 
-#ref2 {
+.ref2 {
     top: -0.3vw;
     left: 0;
     z-index: 3;
-    height: 17vw
+    height: 17vw;
 }
 
-#ref3 {
+.ref3 {
     top: -7vw;
     right: 4vw;
     z-index: 2;
-    height: 13vw
+    height: 13vw;
 }
 
-#ref4 {
+.ref4 {
     top: -0.3vw;
     right: 9vw;
     z-index: 1;
-    height: 14vw
+    height: 14vw;
 }
 
-#ref5 {
+.ref5 {
     top: -3vw;
     right: 10.5vw;
     z-index: 2;
-    height: 17vw
+    height: 17vw;
 }
 
-#ref6 {
+.ref6 {
     top: -0.2vw;
     left: -12.5vw;
     z-index: 2;
-    height: 14vw
+    height: 14vw;
 }
 
-#ref7 {
+.ref7 {
     top: -3vw;
     left: -15vw;
     z-index: 1;
-    height: 17vw
+    height: 17vw;
 }
 
-#ref8 {
+.ref8 {
     top: -14vw;
     left: 62vw;
     z-index: 2;
-    height: 13vw
+    height: 13vw;
 }
 
-.primary-scetches, .color-variations {
-    background-image: url(/img/insert.png);
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center, 10%;
-    background-size: 80vw 110vw; 
+.ref1, .ref3, .ref5, .ref7 {
+    transform: translate(0vw, -120%);
+    opacity: 0;
+    transition: all 0.8s ease 0.2s;
+}
+
+.ref2, .ref4, .ref6, .ref8 {
+    transform: translate(0vw, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0.2s;
+}
+
+.ref1._active,
+.ref2._active {
+    transition: all 0.8s ease 0.2s;
+}
+
+.ref3._active, 
+.ref4._active {
+    transition: all 0.8s ease 0.2s;
+}
+
+.ref5._active,
+.ref6._active {
+    transition: all 0.8s ease 0.4s;
+}
+
+.ref7._active,
+.ref8._active {
+    transition: all 0.8s ease 0.4s;
+}
+
+.reference._active img {
+    transform: translate(0vw, 0vw);
+    opacity: 1;
 }
 
 hr {
@@ -177,10 +207,12 @@ h2 {
     margin:2vw 0 0 0;  
 }
 
-.primary-scetches>img { 
-    display: inline-block; 
-    height: 42vw;
-    margin: auto -3vw;
+.primary-scetches, .color-variations {
+    background-image: url(/img/insert.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center, 10%;
+    background-size: 80vw 110vw; 
 }
 
 .primary-scetches {
@@ -189,35 +221,152 @@ h2 {
     text-align: center;
 }
 
-.color>img {
-    display: inline-block;
+.primary-scetches img { 
+    display: inline-block; 
+    height: 42vw;
+    margin: auto -3vw;
+
+    opacity: 0;
+    transform: scale(0);
+}
+
+.scetch1 {
+    transition: all 2s ease 0s;
+}
+
+.scetch2 {
+    transition: all 2s ease 0.6s;
+}
+
+.scetch3 {
+    transition: all 1s ease 1.2s;
+} 
+
+.primary-scetches._active img {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.color img {
     height: 49vw;
     margin: auto -2vw;
+    z-index: 2;
 }
 
 .color {
+    position: relative;
     margin-top: -2vw;
     text-align: center
 }
 
-.emotions-r1>img, .emotions-r2>img {
+.color1 {
+    transform: translate(-100%, 0vw);
+    opacity: 0;
+    transition: all 0.8s ease 0.2s;
+}
+
+.color2 {
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.color3 {
+    transform: translate(100%, 0vw);
+    opacity: 0;
+    transition: all 0.8s ease 0.2s;
+} 
+
+.color1._active {
+    transition: all 2s ease 0s;
+}
+
+.color2._active {
+    transition: all 1s ease 0s;
+}
+
+.color3._active {
+    transition: all 2s ease 0s;
+}
+
+.color._active img {
+    transform: scale(1);
+    opacity: 1;
+    transform: translate(0vw, 0vw);
+}
+
+.palette img {
+    height: 14vw;
+    margin: auto -2vw;
+    z-index: 1;
+
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.8s ease 0s;
+}
+
+.palette._active img {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.palette1 {
+    position: absolute;
+    top: 208vw;
+    left: 31vw;
+}
+
+.palette2 {
+    position: absolute;
+    top: 208vw;
+    left: 55.5vw;
+}
+
+.palette3 {
+    position: absolute;
+    top: 208vw;
+    right: 19vw;
+}
+
+.emotions-r1 img, .emotions-r2 img {
     display: inline-block;
     height: 20vw;
     margin: 0.5vw 5vw;
 }
 
 .emotions-r1 img {
-    transform: scale(0);
+    transform: translate(-120%, 0vw);
     opacity: 0;
-    transition: all 0.8s ease 0s;
+    transition: all 0.8s ease 0.2s;
+}
+
+.emotions-r2 img {
+    transform: translate(120%, 0vw);
+    opacity: 0;
+    transition: all 0.8s ease 0.2s;
+}
+
+.emotions._active img:nth-child(1),
+.emotions._active img:nth-child(4) {
+    transition: all 1s ease 0s;
+}
+
+.emotions._active img:nth-child(2), 
+.emotions._active img:nth-child(5) {
+    transition: all 1s ease 0.2s;
+}
+
+.emotions._active img:nth-child(3),
+.emotions._active img:nth-child(6) {
+    transition: all 1s ease 0.4s;
 }
 
 .emotions._active img {
-    transform: scale(1);
+    transform: translate(0vw, 0vw);
     opacity: 1;
 }
 
-.emotions._active {
+.emotions {
     margin-top: 1.5vw;
     background: url(/img/insert.png);
     background-repeat: no-repeat;
@@ -237,35 +386,70 @@ h3 {
     margin: 6vw auto -7vw auto;
 }
 
-#beards, #ornament, #flower, #wreth  {
+.beards, .ornament, .flower, .wreth {
     display: inline-block;
+
+    opacity: 0;
 }
 
-#beards {
+.beards {
     height: 15vw;
-    margin: 0 3vw
+    margin: 0 3vw;
+
+    transform: translate(-120vw, 0vw);
+    transition: all 1s ease 0.4s;
 }
 
-#wreth {
+.wreth {
     height: 8vw;
-    margin: 10vw 0 10vw 3vw;   
+    margin: 10vw 0 10vw 3vw; 
+    
+    transform: translate(0vw, -120%);  
+    transition: all 1s ease 0.4s;
 }
 
-#flower {
+.flower {
     height: 14vw;
     margin: auto 2vw auto -2vw;
+    
+    transform: translate(0vw, -120%);
+    transition: all 1s ease 0.4s;
 }
 
-#ornament {
+.ornament {
     height: 10vw;
     margin: 4vw;
+    
+    transform: translate(120vw, 0vw);
+    transition: all 1s ease 0.4s;
+}
+
+.beards._active {
+    transition: all 0.8s ease 0.8s;
+}
+
+.wreth._active {
+    transition: all 0.8s ease 0.2s;
+}
+
+.flower._active {
+    transition: all 0.8s ease 0.4s;
+}
+
+.ornament._active {
+    transition: all 0.8s ease 0.6s;
+}
+
+.accessories._active img {
+    transform: translate(0vw, 0vw);
+    opacity: 1;
 }
 
 .accessories {
     text-align: center;
 }
 
-.model>img {
+.model img {
     height: 42vw; 
     margin: 4vw;
 }
@@ -298,29 +482,56 @@ h4 {
     position: relative;
 }
 
-#branches {
+.final-art img {
+    opacity: 0;
+}
+
+.branches {
     height: 65vw;
     position: absolute;
     top: 9vw;
     left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;  
+
+    transform: translateY(100%);
+    z-index: 1; 
+    transition: all 2s ease 1.6s; 
 }
 
-#rhombus {
+.rhombus {
     height: 44vw;
     position: absolute;
     top: 4vw;
     left: 50%;
-    transform: translateX(-50%);
+
+    transform: translateX(100%);
     z-index: 2; 
+    transition: all 2s ease 0.8s;
 }
 
-#mavka {
+.mavka {
     height: 78vw;
     position: absolute;
     top: 9vw;
     left: 50%;
-    transform: translateX(-50%);
+    
+    transform: translateX(-100%);
     z-index: 3; 
+    transition: all 2s ease 0.2s;
+}
+
+.beards._active {
+    transition: all 2s ease 1.6s;
+}
+
+.rhombus._active {
+    transition: all 2s ease 0.8s;
+}
+
+.mavka._active {
+    transition: all 2s ease 0.2s;
+}
+
+.final-art._active img {
+    transform: translateX(-50%);
+    opacity: 1;
 }
